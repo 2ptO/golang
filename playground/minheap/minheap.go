@@ -1,14 +1,15 @@
+// Package minheap implements the min heap data structure
 package minheap
 
 import "errors"
 
-//MinHeap ...exported for testing
+// MinHeap stores the integers in a minheap structure
 type MinHeap struct {
 	size, capacity int
 	data           []int
 }
 
-//ErrEmptyHeap ...Returned when heap is Empty
+// ErrEmptyHeap is returned when heap is empty
 var ErrEmptyHeap = errors.New("Empty Heap")
 
 func (mHeap MinHeap) peek() (int, error) {
@@ -18,7 +19,8 @@ func (mHeap MinHeap) peek() (int, error) {
 	return mHeap.data[0], nil
 }
 
-func (mHeap *MinHeap) add(newVal int) {
+// Add adds a new value in the minHeap
+func (mHeap *MinHeap) Add(newVal int) {
 	// mHeap.ensureEnoughCapacity()
 	mHeap.data[mHeap.size] = newVal
 	mHeap.bubbleUp(mHeap.size)
@@ -53,7 +55,8 @@ func (mHeap *MinHeap) swap(from, to int) {
 	mHeap.data[to] = tmp
 }
 
-func (mHeap *MinHeap) pop() (int, error) {
+// Pop removes the top element from the heap and returns it.
+func (mHeap *MinHeap) Pop() (int, error) {
 	root, err := mHeap.peek()
 	if err != nil {
 		return 0, err

@@ -19,7 +19,7 @@ func TestHeapRootIsMinimum(t *testing.T) {
 	mHeap := MinHeap{0, 0, make([]int, 10)}
 	testInputs := []int{10, 8, 20, 15, 4, 40, 13}
 	for _, testVal := range testInputs {
-		mHeap.add(testVal)
+		mHeap.Add(testVal)
 	}
 	sort.Ints(testInputs)
 	if val, _ := mHeap.peek(); val != testInputs[0] {
@@ -30,7 +30,7 @@ func TestHeapRootIsMinimum(t *testing.T) {
 
 func TestHeapPopWhenEmpty(t *testing.T) {
 	mHeap := MinHeap{0, 0, make([]int, 10)}
-	_, err := mHeap.pop()
+	_, err := mHeap.Pop()
 	if err != ErrEmptyHeap {
 		t.Fatal("No error received when heap is empty")
 	}
@@ -41,13 +41,13 @@ func TestHeapPop(t *testing.T) {
 	testInputs := []int{10, 8, 20, 15, 4, 40, 13}
 	//add inputs to Heap
 	for _, testVal := range testInputs {
-		mHeap.add(testVal)
+		mHeap.Add(testVal)
 	}
 
 	//sort testInputs so that we can pop and compare
 	sort.Ints(testInputs)
 	for _, expected := range testInputs {
-		if actual, err := mHeap.pop(); err != nil || actual != expected {
+		if actual, err := mHeap.Pop(); err != nil || actual != expected {
 			t.Fatalf("Actual %d, expected %d\n", actual, expected)
 		}
 	}
