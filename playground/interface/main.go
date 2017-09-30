@@ -35,8 +35,8 @@ func main() {
 	fmt.Println("Testing interface knowledge in Golang.")
 	c1 := circle{5}
 	r1 := rectangle{5, 6}
-	shapes := []shape{c1, r1}
-	for _, s := range shapes {
+	newShapes := []shape{c1, r1}
+	for _, s := range newShapes {
 		fmt.Println(s.area(), s.perim())
 	}
 }
