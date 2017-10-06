@@ -2,10 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/2ptO/golang/packages/testme"
+	"strings"
 )
 
 func main() {
 	fmt.Println("Hello, world")
-	testme.WhoAmI()
+	s := "qiuck brown jumps over lazy dog"
+	s = strings.Join(strings.Split(s, " "), " ")
+	fmt.Println(s)
 }

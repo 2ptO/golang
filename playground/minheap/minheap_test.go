@@ -16,6 +16,7 @@ func TestHeapReturnsErrorWhenEmpty(t *testing.T) {
 }
 
 func TestHeapRootIsMinimum(t *testing.T) {
+	t.Log("Testing ", t.Name())
 	mHeap := MinHeap{0, 0, make([]int, 10)}
 	testInputs := []int{10, 8, 20, 15, 4, 40, 13}
 	for _, testVal := range testInputs {
