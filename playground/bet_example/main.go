@@ -1,14 +1,20 @@
-package starting_code
+package main
 
 import (
 	"fmt"
-	"github.com/GoesToEleven/go-programming/code_samples/010-ninja-level-thirteen/01/starting-code/dog"
+
+	"github.com/2ptO/golang/playground/bet_example/dog"
 )
 
 type canine struct {
 	name string
 	age  int
 }
+
+/*
+ * Example derived from Todd's exercise code at
+ * https://github.com/GoesToEleven/go-programming/tree/master/code_samples/010-ninja-level-thirteen/01/starting-code
+ */
 
 func main() {
 	fido := canine{
